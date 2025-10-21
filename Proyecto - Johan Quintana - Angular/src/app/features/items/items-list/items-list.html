@@ -1,0 +1,23 @@
+<form class="row g-3 mb-4"
+      (submit)="agregar(nombre.value, descripcion.value, precio.value); $event.preventDefault();">
+  <div class="col-md-4">
+    <label class="form-label">Nombre</label>
+    <input #nombre type="text" class="form-control" placeholder="Ej. Botín de dama">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Descripción</label>
+    <input #descripcion type="text" class="form-control" placeholder="Ej. Color negro, tacón 5cm">
+  </div>
+  <div class="col-md-3">
+    <label class="form-label">Precio (US$)</label>
+    <input #precio type="number" step="0.01" class="form-control" placeholder="Ej. 49.99">
+  </div>
+  <div class="col-md-1 d-flex align-items-end">
+    <button type="submit" class="btn btn-primary w-100">Agregar</button>
+  </div>
+</form>
+<ul class="list-group">
+  <li class="list-group-item p-0" *ngFor="let it of items">
+    <app-item-card [item]="it"></app-item-card>
+  </li>
+</ul>
